@@ -134,3 +134,51 @@ printAge(6, 'Tita')
 printAge()
 // undefined is undefined years old
 ```
+
+## The functions' scope
+
+If a variable is not defined within the body of a function, we are talking about a `global` variable. Conversely, a variable defined within a function is a `local` variable.
+```
+/* Global Scope */
+// Global variable
+var name = 'Kim'
+
+function printUpperCaseName() {
+    name = name.toUpperCase()
+    console.log(name)
+}
+
+printUpperCaseName()
+// name was modified and returns "KIM"
+```
+The global object in the browser is `window`
+```
+window.name 
+// prints "KIM" in the browser's console
+```
+
+If we don't want that the execution of a function modifies a global variable, we use parameters instead of directly passing the variable.
+```
+/* Local Scope */
+// Global variable
+var globalName = 'Saul'
+
+function printUpperCaseName(n) {
+    n = n.toUpperCase() // side effect
+    console.log(n)
+}
+
+printUpperCaseName(globalName) // prints "SAUL"
+// globalName returns "Saul"
+```
+The same name can be used for a global variable and for a function parameter with a local scope.
+```
+/* Using same name - different scope */
+var myName = "Mike"
+function printLowerCaseName(myName) {
+    myName = myName.toLowerCase() // side effect
+    console.log(myName)
+}
+printLowerCaseName(myName)
+// myName returns "Mike"
+```
