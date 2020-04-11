@@ -16,3 +16,4 @@ printAge('Tita', 6)
 printAge(6, 'Tita')
 // 6 is Tita years old
 printAge()
+// undefined is undefined years old
