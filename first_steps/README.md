@@ -109,3 +109,28 @@ var totalStr = roundedTotal.toFixed(2)
 var totalFloat = parseFloat(totalStr)
 // totalFloat returns 600.9
 ```
+
+## Functions
+
+The functions are fractions of reusable code. To define a function we will use the reserved word `function`.
+
+We delimit the body of the function using curly braces `{}`. Function parameters are variables that are passed to the function by enclosing them in parentheses `()`.
+```
+var name = 'Mayra', age = 26
+
+function printAge(theName, theAge) {
+    console.log(`${theName} is ${theAge} years old`)
+}
+
+printAge(name, age)
+printAge('Luna', 13)
+printAge('Tita', 6)
+```
+
+Defining functions helps us to reuse code. JavaScript is an interpreted language, this means that it will try to execute the code regardless of whether the parameters that we pass to the function are inverted or even incomplete.
+```
+printAge(6, 'Tita')
+// 6 is Tita years old
+printAge()
+// undefined is undefined years old
+```
