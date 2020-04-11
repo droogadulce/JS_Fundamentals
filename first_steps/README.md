@@ -35,8 +35,8 @@ A JS `string` stores a series of characters like `'Buzz Lightyear'`.
 
 There are a lot of methods to be used with strings. For example:
 
->**toUpperCase**, which is used to transform a String to uppercase. 
->**toLowerCase**, which is used to transform the string to lowercase.
+* **toUpperCase**, which is used to transform a String to uppercase. 
+* **toLowerCase**, which is used to transform the string to lowercase.
 
 Examples
 ```
@@ -58,4 +58,54 @@ var fullName = firstName + ' ' + lastName
 The string interpolation helps in inserting values into string literals in a concise and readable manner.
 ```
 var fullName = `${firstName} ${lastName}`
+```
+
+## Variables: Numbers
+
+We have the mathematical operators:
+
+* sum `+`
+```
+var age = 26
+age = age + 1
+age += 1
+ ```
+* subtraction `-`
+```
+var weight = 61
+weight = weight - 1
+weight -= 1
+``` 
+* multiplication `*` - need to be careful with float numbers 
+```
+var winePrice = 200.3
+var total = winePrice * 3
+// Returns 600.9000000000001
+var newTotal = winePrice * 100 * 3 / 100
+// newTotal returns 600.9
+```
+* division `/`
+```
+var pizza = 8
+var people = 2
+var pizzaSlicesPerPerson = pizza / people
+// pizzaSlicesPerPerson returns 4
+```
+
+We have some methods that can help us with the operations:
+
+* Math.round() - to not worry about the number of digits after the period
+```
+var roundedTotal = Math.round(winePrice * 100 * 3) / 100
+// roundedTotal returns 600.9
+```
+* toFixed() - converts a number into a string, keeping a specified number of decimals
+```
+var totalStr = roundedTotal.toFixed(2)
+// totalStr returns "600.90"
+```
+* parseFloat() - converts string to float
+```
+var totalFloat = parseFloat(totalStr)
+// totalFloat returns 600.9
 ```
