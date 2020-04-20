@@ -184,3 +184,43 @@ function printLowerCaseName(myName) {
 printLowerCaseName(myName)
 // myName returns "Mike"
 ```
+
+## Objects
+
+Objects are defined delimited by curly braces `{}`
+
+```js
+var kim = {
+    name: 'Kim',
+    lastName: 'Wexler',
+    age: 35
+}
+```
+
+An attribute consists of a key (key) and a value (value), which are separated by `:`. Values can be of type string, number, boolean, etc. Each attribute is separated from the next by a comma. An object can have all the attributes that are necessary.
+
+We can access to an attribute's value of an object using a dot `.`
+
+```js
+printUpperCaseName(kim.name)
+```
+
+An object can also be passed as an attribute in a function.
+```js
+function printLowerCaseName(person) {
+    console.log(person.name.toLowerCase())
+}
+
+printLowerCaseName(kim)
+```
+
+The latest versions of JavaScript allow us to break down the object to access only the attribute that interests us. This is accomplished by enclosing the attribute name in curly braces {}.
+```js
+function printUpperCaseAttribute({ name }) {
+    console.log(name.toUpperCase())
+}
+
+printUpperCaseAttribute(kim)
+printUpperCaseAttribute({ name: 'Mike' })
+printUpperCaseAttribute({ lastName: 'McGill' }) // undefined
+```
