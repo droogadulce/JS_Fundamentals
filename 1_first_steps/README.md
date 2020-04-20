@@ -236,3 +236,29 @@ function printPersonData(person) {
 
 printPersonData(kim)
 ```
+
+## Parameters as reference or as value
+
+JavaScript behaves differently when we pass it an object as a parameter.
+
+When objects are passed as a reference, they are modified outside of the function. To solve this you can create a different object. We can do this by placing three dots `...` before the name.
+
+```js
+function birthday(person) {
+    person.age += 1
+}
+
+birthday(kim)
+// kim -> {name: "Kim", lastName: "Wexler", age: 36}
+
+function newObjBirthday(person) {
+    // new object
+    return {
+        ...person, 
+        age: person.age + 1
+    }
+}
+
+newObjBirthday(kim) // {name: "Kim", lastName: "Wexler", age: 37}
+// kim -> {name: "Kim", lastName: "Wexler", age: 36}
+```
