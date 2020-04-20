@@ -224,3 +224,15 @@ printUpperCaseAttribute(kim)
 printUpperCaseAttribute({ name: 'Mike' })
 printUpperCaseAttribute({ lastName: 'McGill' }) // undefined
 ```
+
+## Object Destructuring
+
+In order not to duplicate the variables, we introduce the name of the variable as a parameter of the second variable.
+```js
+function printPersonData(person) {
+    var { name, lastName, age } = person
+    console.log(`Hi, I'm ${name} ${lastName} and I'm ${age} years old.`)
+}
+
+printPersonData(kim)
+```
